@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link href="css/iconfont.css" rel="stylesheet" />
+    <style>
+    </style>
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+</head>
+<body>	
+	<header class="mui-bar mui-bar-nav">
+			<div class="mui-input-row mui-search" style="float:left; width:270px; margin-right: 0px;">
+				<input type="search" class="mui-input-clear"  placeholder="Search">
+			</div>
+				<button type="button" class="mui-btn mui-btn-blue mui-btn-danger" style="width:70px;height:29px; margin-left: 7px;">Search</button>
+			
+	</header>	
+	<div class="mui-content">
+		<div class="mui-card">
+				<div class="mui-card-header">
+					<h3 class="mui-h4" style="color: orangered">News</h3>
+				</div>
+				<div class="mui-slider">
+				  <div class="mui-slider-group">
+				    <!--第一个内容区容器-->
+				    <div class="mui-slider-item">
+				      <!-- 具体内容 -->
+				      <div class="mui-card-content" style="margin: 5px;">
+					<img src="images/tree1.jpeg" alt="" height="300px" width="100%"/>
+				</div>
+				    </div>
+				    <!--第二个内容区-->
+				    <div class="mui-slider-item">
+				      <!-- 具体内容 -->
+				      <div class="mui-card-content" style="margin: 5px;">
+					<img src="images/tree2.jpeg" alt="" height="300px" width="100%"/>
+				</div>
+				    </div>
+				    
+				    <div class="mui-slider-item">
+				    	 <div class="mui-card-content" style="margin: 5px;">
+					<img src="images/tree3.jpg" alt="" height="300px" width="100%"/>
+				</div>  	
+				  </div>
+				</div>
+				<div class="mui-slider-indicator">
+				<div class="mui-indicator mui-active"></div>
+				<div class="mui-indicator"></div>
+				<div class="mui-indicator"></div>
+			</div>
+			</div>
+		</div>
+		<div class="mui-card">
+				<div class="mui-card-header">
+					<h3 class="mui-h4"style="color: orangered">Special</h3>
+				</div>
+				<div class="mui-slider">
+				  <div class="mui-slider-group">
+				    <!--第一个内容区容器-->
+				    <div class="mui-slider-item">
+				      <!-- 具体内容 -->
+				      <div class="mui-card-content" style="margin: 5px;">
+					<img src="images/tree2.jpeg" alt="" height="300px" width="100%"/>
+				</div>
+				    </div>
+				    <!--第二个内容区-->
+				    <div class="mui-slider-item">
+				      <!-- 具体内容 -->
+				      <div class="mui-card-content" style="margin: 5px;">
+					<img src="images/tree2.jpeg" alt="" height="300px" width="100%"/>
+				</div>
+				    </div>
+				    
+				    <div class="mui-slider-item">
+				    	 <div class="mui-card-content" style="margin: 5px;">
+					<img src="images/tree1.jpeg" alt="" height="300px" width="100%"/>
+				</div>  	
+				  </div>
+				</div>
+				<div class="mui-slider-indicator">
+				<div class="mui-indicator mui-active"></div>
+				<div class="mui-indicator"></div>
+				<div class="mui-indicator"></div>
+			</div>
+			</div>
+		</div>
+		<div class="mui-card">
+				<div class="mui-card-header">
+					<h3 class="mui-h4" style="color: orangered">Tips</h3>
+				</div>
+				<div class="mui-slider">
+				  <div class="mui-slider-group">
+				    <!--第一个内容区容器-->
+				    <div class="mui-slider-item">
+				      <!-- 具体内容 -->
+				      <div class="mui-card-content" style="margin: 5px;">
+					<img src="images/tree3.jpg" alt="" height="300px" width="100%"/>
+				</div>
+				    </div>
+				    <!--第二个内容区-->
+				    <div class="mui-slider-item">
+				      <!-- 具体内容 -->
+				      <div class="mui-card-content" style="margin: 5px;">
+					<img src="images/tree2.jpeg" alt="" height="300px" width="100%"/>
+				</div>
+				    </div>
+				    
+				    <div class="mui-slider-item">
+				    	 <div class="mui-card-content" style="margin: 5px;">
+					<img src="images/tree1.jpeg" alt="" height="300px" width="100%"/>
+				</div>  	
+				  </div>
+				</div>
+				<div class="mui-slider-indicator">
+				<div class="mui-indicator mui-active"></div>
+				<div class="mui-indicator"></div>
+				<div class="mui-indicator"></div>
+			</div>
+			</div>
+		</div>
+		</div>
+	</div>
+	
+	<nav id="bar" class="mui-bar mui-bar-tab">
+		<a class="mui-tab-item" id="Tostore" href="Store.html">
+		<span class="mui-icon iconfont icon-icon-"></span>
+		<span class="mui-tab-label">Store</span>
+		</a>
+		
+		<a class="mui-tab-item mui-active" id="Tocart" href="Cart.html">
+		<span class="mui-icon iconfont icon-caigou"></span>
+		<span class="mui-tab-label">Cart</span>
+		</a>
+		
+		<a class="mui-tab-item mui-active" id="Toaccount" href="Account.html">
+		<span class="mui-icon mui-icon-person"></span>
+		<span class="mui-tab-label">Account</span>
+		</a>
+	</nav>
+</body>
+	<script>
+	document.getElementById('Tostore').addEventListener('tap', function() {
+  	mui.openWindow({
+    url: 'Store.html', 
+    id:'Store'
+  		});
+	});
+	
+	document.getElementById('Tocart').addEventListener('tap', function() {
+  	mui.openWindow({
+    url: 'Cart.html', 
+    id:'Cart'
+  		});
+	});
+	
+	document.getElementById('Toaccount').addEventListener('tap', function() {
+  	mui.openWindow({
+    url: 'Account.html', 
+    id:'Account'
+  		});
+	});
+	</script>
+</html>
