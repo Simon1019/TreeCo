@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>Product</title>
+		
+		<script src="js/mui.min.js"></script>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<script type="text/javascript" charset="UTF-8">
+			mui.init();
+		</script>
+	</head>
+
+	<!--<body>
+		<!--<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">TreeCo</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-content-padded" style="margin: 5px;">
+				<div class="mui-input-row mui-search">
+					<input type="search" class="mui-input-clear" placeholder="">
+				</div>
+			<p>产品列表</p>
+		</div>-->
+	</body>-->
+<body>
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">TreeCo</h1>
+		</header>
+		<div class="mui-content">
+				<div class="mui-content-padded" style="margin: 5px;">
+				<div class="mui-input-row mui-search">
+					<input type="search" class="mui-input-clear" placeholder="">
+				</div>
+				</div>
+				<div id="segmentedControl" class="mui-segmented-control mui-segmented-control-inverted">
+					<a class="mui-control-item mui-active" href="#item1">Tree</a>
+					<a class="mui-control-item" href="#item2">Equipment</a>
+					<a class="mui-control-item" href="#item3">Fertilizer</a>
+					<a class="mui-control-item" href="#item4">Services</a>
+				</div>
+				<div id="item1" class="mui-control-content mui-active">
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell">
+									第一个选项卡子项-1
+								</li>
+								<li class="mui-table-view-cell">
+									第一个选项卡子项-2
+								</li>
+								<li class="mui-table-view-cell">
+									第一个选项卡子项-3
+								</li>
+							</ul>
+				</div>
+				<div id="item2" class="mui-control-content">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell">
+							第二个选项卡子项-1
+						</li>
+						<li class="mui-table-view-cell">
+							第二个选项卡子项-2
+						</li>
+						<li class="mui-table-view-cell">
+							第二个选项卡子项-3
+						</li>
+					</ul>
+				</div>
+				<div id="item3" class="mui-control-content">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell">
+							第三个选项卡子项-1
+						</li>
+						<li class="mui-table-view-cell">
+							第三个选项卡子项-2
+						</li>
+						<li class="mui-table-view-cell">
+							第三个选项卡子项-3
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script>
+			mui.init({
+				swipeBack: true //启用右滑关闭功能
+			});
+			(function($) {
+				$('#scroll').scroll({
+					indicators: true //是否显示滚动条
+				});
+				var segmentedControl = document.getElementById('segmentedControl');
+				$('.mui-input-group').on('change', 'input', function() {
+					if (this.checked) {
+						var styleEl = document.querySelector('input[name="style"]:checked');
+						var colorEl = document.querySelector('input[name="color"]:checked');
+						if (styleEl && colorEl) {
+							var style = styleEl.value;
+							var color = colorEl.value;
+							segmentedControl.className = 'mui-segmented-control' + (style ? (' mui-segmented-control-' + style) : '') + ' mui-segmented-control-' + color;
+						}
+					}
+				});
+			})(mui);
+		</script>
+
+	</body>
+</html>

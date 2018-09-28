@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+        <title>TreeCo</title>
+        <link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" href="fonts/iconfont.css" />
+        <style>
+        </style>
+    </head>
+
+    <body>
+        <div class="mui-content">
+        	
+            <nav id="bar" class="mui-bar mui-bar-tab">
+                <a class="mui-tab-item mui-active" href="tab-main.html" data-id="main">
+                    <span class="mui-icon iconfont icon-home"></span>
+                    <span class="mui-tab-label">Home</span>
+                </a>
+                <a class="mui-tab-item" href="tab-message.html" data-id="message">
+                    <span class="mui-icon iconfont icon-shop"></span>
+                    <span class="mui-tab-label">Product</span>
+                </a>
+                <a class="mui-tab-item" href="tab-contact.html" data-id="contact">
+                    <span class="mui-icon iconfont icon-user"></span>
+                    <span class="mui-tab-label">Account</span>
+                </a>
+                <a class="mui-tab-item" href="tab-setting.html" data-id="setting">
+                    <span class="mui-icon iconfont icon-gouwuche"></span>
+                    <span class="mui-tab-label">Cart</span>
+                </a>
+            </nav>
+        </div>
+        <script src="js/mui.min.js"></script>
+        <script>
+            mui.init();
+            mui.plusReady(function() {
+                var self = plus.webview.currentWebview();
+                var current = '';
+                var styles = {
+                    top: '0',
+                    bottom: '51px'
+                };
+                var tabsConfig = {
+                    main: {
+                        url: 'tab-main.html',
+                        styles: styles,
+                        default: true
+                    },
+                    message: {
+                        url: 'tab-message.html',
+                        styles: styles
+                    },
+                    contact: {
+                        url: 'tab-contact.html',
+                        styles: styles
+                    },
+                    setting: {
+                        url: 'tab-setting.html',
+                        styles: styles
+                    }
+                };
+                var tabs = {};
+                for (id in tabsConfig) {
+                    tabs[id] = plus.webview.create(tabsConfig[id].url, id, tabsConfig[id].styles);
+                    if (tabsConfig[id]['default']) {
+                        self.append(tabs[id]);
+                        current = id;
+                    }
+                }
+                mui('#bar').on('tap', 'a', function(e) {
+                    if (current == this.dataset.id) {
+                        return;
+                    }
+                    tabs[this.dataset.id].show();
+                    tabs[current].hide();
+                    current = this.dataset.id;
+                });
+            });
+        </script>
+    </body>
+</html>

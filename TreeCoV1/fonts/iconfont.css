@@ -1,0 +1,20 @@
+
+@font-face {font-family: "iconfont";
+  src:url('iconfont.ttf?t=1538066825761') format('truetype'); /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+}
+
+.icon-user:before { content: "\e7ae"; }
+
+.icon-home:before { content: "\e7c6"; }
+
+.icon-shop:before { content: "\e7ce"; }
+
+.icon-gouwuche:before { content: "\e625"; }
+
