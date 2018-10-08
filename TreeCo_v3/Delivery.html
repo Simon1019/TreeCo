@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/iconfont.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+
+		<br/>
+		<form action="">
+			<fieldset>
+				<legend><b>Delivery</b></legend>
+			</fieldset>
+		</form>
+
+		<br/>
+		<div>
+			<label for="txt"><b>Name</b></label>
+			<input placeholder="Type here" id="name" TYPE="text" style="width:200px; height:20px; " SIZE="25" onmouseover="this.style.borderColor='black';this.style.backgroundColor='plum'" style="width: 106; height: 21" onmouseout="this.style.borderColor='black';this.style.backgroundColor='#ffffff'" style="border-width:1px;border-color=black">
+			</input>
+		</div>
+
+		<br/>
+		<div>
+			<label for="txt"><b>Phone</b></label>
+			<input placeholder="Type here" id="number" TYPE="text" style="width:200px; height:20px; " SIZE="25" onmouseover="this.style.borderColor='black';this.style.backgroundColor='plum'" style="width: 106; height: 21" onmouseout="this.style.borderColor='black';this.style.backgroundColor='#ffffff'" style="border-width:1px;border-color=black">
+			</input>
+		</div>
+		<br/>
+
+		<div>
+			<label for="txt"><b>Address</b></label>
+			<input placeholder="Type here" id="address" TYPE="text" style="width:200px; height:20px;" SIZE="29" onmouseover="this.style.borderColor='black';this.style.backgroundColor='plum'" style="width: 106; height: 21" onmouseout="this.style.borderColor='black';this.style.backgroundColor='#ffffff'" style="border-width:1px;border-color=black">
+			</input>
+		</div>
+		<br/>
+		
+		<input id="Mybutton" style="margin-left:50px;margin-top:50px" type=button color="red" value="Done">
+
+		<nav id="bar" class="mui-bar mui-bar-tab">
+			<a class="mui-tab-item" id="Tohome" href="index.html">
+				<span class="mui-icon mui-icon-home"></span>
+				<span class="mui-tab-label">Home</span>
+			</a>
+
+			<a class="mui-tab-item mui-active" id="Tocart" href="Cart.html">
+				<span class="mui-icon iconfont icon-caigou"></span>
+				<span class="mui-tab-label">Cart</span>
+			</a>
+
+			<a class="mui-tab-item mui-active" id="Toaccount" href="Account.html">
+				<span class="mui-icon mui-icon-person"></span>
+				<span class="mui-tab-label">Account</span>
+			</a>
+		</nav>
+
+	</body>
+	<script>
+		document.getElementById('Tohome').addEventListener('tap', function() {
+			mui.openWindow({
+				url: 'index.html',
+				id: 'Home'
+			});
+		});
+
+		document.getElementById('Mybutton').addEventListener('tap', function() {
+			mui.openWindow({
+				url: 'Done.html',
+				id: 'Done'
+			});
+		});
+
+		document.getElementById('Tocart').addEventListener('tap', function() {
+			mui.openWindow({
+				url: 'Cart.html',
+				id: 'Cart'
+			});
+		});
+
+		document.getElementById('Toaccount').addEventListener('tap', function() {
+			mui.openWindow({
+				url: 'Account.html',
+				id: 'Account'
+			});
+		});
+	</script>
+
+</html>
