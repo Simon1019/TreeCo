@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/iconfont.css" rel="stylesheet" />
+		<style>
+			div {
+				float: left;
+			}
+		</style>
+	</head>
+
+	<body>
+	
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">Anne Frank Tree</h1>
+		</header>
+
+		<div class="mui-card">
+
+			<div class="mui-card-content">
+				<img src="images/t1.jpg" alt="" height="300px" width="100%" />
+				<div align="left">
+					Price:$100
+				</div>
+				<canvas height="30px" width="175px"></canvas>
+				<div>
+					<p>
+						Description: This tree ......
+					</p>
+				</div>
+				
+				<canvas height="30px" width="175px"></canvas>
+				<div id="NS" class="mui-numbox" data-numbox-step='1' data-numbox-min='0' data-numbox-max='10'>
+					<button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+					<input   class="mui-numbox-input" type="number" />
+					<button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+				</div>
+				<canvas height="30px" width="175px"></canvas>
+			</div>
+
+			<div class="mui-card-footer">
+				<div>
+					<div>
+						<button id="addToCart" class="mui-btn mui-btn-danger">Add to Cart</button>
+					</div>
+					
+					<div>
+						<canvas height="30px" width="145px"></canvas>
+					</div>
+					<div>
+						<button type="button" id="buynow" class="mui-btn mui-btn-success">Buy now</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	
+
+
+
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+	      	function plusReady(){
+	      		wv=plus.webview.currentWebview();
+	      	}
+	      	
+	      	if(window.plus){
+				plusReady();
+			}else{
+				document.addEventListener('plusready', plusReady, false);
+			}	   
+			
+			
+			var addToCart = document.getElementById('addToCart');
+			var payment = document.getElementById('buynow');
+			addToCart.addEventListener('tap',function(){
+				var numberS = mui(NS).numbox().getValue();
+				
+				plus.storage.setItem('Anne Frank Tree',numberS);
+				mui.openWindow({
+					url: 'cart.html',
+					id: 'cart',
+					styles:{
+						top:'0px',
+						bottom:'48px'
+					},
+						extras:{
+					price: numberS
+				}
+				});
+				console.log('Anne Frank Tree' +' : '+numberS);
+			})
+			
+			payment.addEventListener('tap',function(){
+					 var numberS = mui(NS).numbox().getValue();
+			 mui.openWindow({
+			 	url: 'payment.html',
+					id: 'payment',
+					styles:{
+						top:'0px',
+						bottom:'48px'
+				},
+				extras:{
+					price: numberS
+				}
+			 });
+				
+			});
+			
+			
+			
+		</script>
+	</body>
+
+
+</html>

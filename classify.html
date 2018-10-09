@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" href="css/com.css">
+		<link href="css/iconfont1.css" rel="stylesheet" />
+		<link href="css/classify.css" rel="stylesheet" />
+		<script type="text/javascript">
+			(function(designWidth, maxWidth) {
+				var doc = document,
+					win = window,
+					docEl = doc.documentElement,
+					remStyle = document.createElement("style"),
+					tid;
+
+				function refreshRem() {
+					var width = docEl.getBoundingClientRect().width;
+					maxWidth = maxWidth || 750;
+					width > maxWidth && (width = maxWidth);
+					var rem = width * 75 / designWidth;
+					remStyle.innerHTML = 'html{font-size:' + rem + 'px;}';
+				}
+
+				if(docEl.firstElementChild) {
+					docEl.firstElementChild.appendChild(remStyle);
+				} else {
+					var wrap = doc.createElement("div");
+					wrap.appendChild(remStyle);
+					doc.write(wrap.innerHTML);
+					wrap = null;
+				}
+
+				refreshRem();
+
+				win.addEventListener("resize", function() {
+					clearTimeout(tid);
+					tid = setTimeout(refreshRem, 300);
+				}, false);
+
+				win.addEventListener("pageshow", function(e) {
+					if(e.persisted) {
+						clearTimeout(tid);
+						tid = setTimeout(refreshRem, 300);
+					}
+				}, false);
+
+				if(doc.readyState === "complete") {
+					doc.body.style.fontSize = "16px";
+				} else {
+					doc.addEventListener("DOMContentLoaded", function(e) {
+						doc.body.style.fontSize = "16px";
+					}, false);
+				}
+			})(750, 750);
+		</script>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">Refine List</h1>
+		</header>
+		<div class="mui-content mui-row ">
+			<div class="mui-col-xs-3">
+				<div id="segmentedControls" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-vertical">
+				</div>
+			</div>
+			<div id="segmentedControlContents" class="mui-col-xs-9" style="">
+				<div id="item1" class="mui-control-content mui-active">
+					<div id="content0" class="mui-control-content">
+						<ul class="mui-table-view"></ul>
+					</div>
+				</div>
+				<div id="item2" class="mui-control-content">
+				</div>
+				<div id="item3" class="mui-control-content">
+				</div>
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/jquery-2.2.4-.min.js"></script>
+		<script src="js/classify.js"></script>
+	</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/iconfont.css" rel="stylesheet" />
+		<style>
+			.center {
+				position: fixed;
+				top: 35%;
+				left: 50%;
+				width: 100%;
+				height: 55%;
+				-webkit-transform: translateX(-50%) translateY(-50%);
+			}
+		</style>
+	</head>
+
+	<body>
+		
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">Payment</h1>
+		</header>
+		<div class="center">
+			<div class="mui-card">
+				<div class="mui-card-header">
+					<label id="total"></label>
+				</div>
+				<div class="mui-card-content">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell mui-collapse">
+							<a class="mui-navigate-right" href="#">Delivery Option</a>
+							<div class="mui-collapse-content">
+								<form>
+									<input type="radio" name="DO" value="1" onclick="getValue(this.value)">Delivery</input>
+									<br>
+									<input type="radio" name="DO" value="2" onclick="getValue(this.value)">Self Pick-Up</input>
+								</form>
+							</div>
+						</li>
+						<li class="mui-table-view-cell mui-collapse">
+							<a class="mui-navigate-right" href="#">Card Detail</a>
+							<div class="mui-collapse-content">
+								<div class="mui-card">
+									<div class="mui-card-content" id="PM">
+										<label>Credit Card Number:</label>
+										<div class="X">
+											<input type="number"></input>
+										</div>
+
+										<label>Card Holder Name:</label>
+										<div>
+											<input type="text"></input>
+										</div>
+
+										<label>Vaild Date:</label>
+										<div>
+											<input type="date"></input>
+										</div>
+
+										<label>CVV:</label>
+										<div>
+											<input type="number"></input>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="mui-card-footer">
+					<button id="pay">Pay</button>
+				</div>
+			</div>
+		</div>
+
+	
+		
+		
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+		mui.plusReady(function(){
+	    var self = plus.webview.currentWebview();
+	    var price = self.price*100;//获得参数
+	    
+	    document.getElementById('total').innerHTML = "Total: " +price + " NZD";
+			
+	    
+		})
+			
+			var method = null;
+
+		function getValue(value) {
+			method = value;
+		}
+
+	
+
+		document.getElementById('pay').addEventListener('tap', function() {
+			var radios = document.getElementsByName("DO");
+			var value = 0;
+			var u = null;
+			
+			if(method == "1"){
+				u = 'delivery.html'
+			}else{
+				u = 'pickup.html'
+			}
+			
+			mui.openWindow({
+				url: u,
+				id: 'test',
+					styles:{
+						top:'0px',
+						bottom:'48px'
+				}
+			});
+
+		});
+
+
+	
+	
+	
+		
+		</script>
+		
+	</body>
+
+
+</html>
