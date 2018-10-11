@@ -6,53 +6,64 @@
 		<title></title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/iconfont.css" rel="stylesheet" />
 	</head>
 
 	<body>
-		<script src="js/mui.min.js"></script>
-		<script type="text/javascript">
-			mui.init()
-		</script>
 		
+	<div class="mui-content">
+
 		<br/>
 		<form action="">
-		<fieldset><legend><b>Delivery</b></legend></fieldset>
+			<fieldset>
+				<legend><b>Delivery</b></legend>
+			</fieldset>
 		</form>
-		
-		
+
 		<br/>
 		<div>
-		<label for="txt"><b>Name</b></label>
-		<input placeholder="Type here" id="name" TYPE="text" style="width:200px; height:20px; "SIZE="25" onmouseover="this.style.borderColor='black';this.style.backgroundColor='plum'"
-		style="width: 106; height: 21"
-		onmouseout="this.style.borderColor='black';this.style.backgroundColor='#ffffff'" style="border-width:1px;border-color=black">
-		</input>
+			<label for="txt"><b>Name</b></label>
+			<input placeholder="Type here" id="name" TYPE="text" style="width:200px; height:20px; " SIZE="25" onmouseover="this.style.borderColor='black';this.style.backgroundColor='plum'" style="width: 106; height: 21" onmouseout="this.style.borderColor='black';this.style.backgroundColor='#ffffff'" style="border-width:1px;border-color=black">
+			</input>
 		</div>
-		
+
 		<br/>
 		<div>
-    		<label for="txt"><b>Phone</b></label>
-    		<input placeholder="Type here" id="number" TYPE="text" style="width:200px; height:20px; "SIZE="25" onmouseover="this.style.borderColor='black';this.style.backgroundColor='plum'"
-		style="width: 106; height: 21"
-		onmouseout="this.style.borderColor='black';this.style.backgroundColor='#ffffff'" style="border-width:1px;border-color=black">
-  		</input>
+			<label for="txt"><b>Phone</b></label>
+			<input placeholder="Type here" id="number" TYPE="text" style="width:200px; height:20px; " SIZE="25" onmouseover="this.style.borderColor='black';this.style.backgroundColor='plum'" style="width: 106; height: 21" onmouseout="this.style.borderColor='black';this.style.backgroundColor='#ffffff'" style="border-width:1px;border-color=black">
+			</input>
+		</div>
+		<br/>
+
+		<div>
+			<label for="txt"><b>Address</b></label>
+			<input placeholder="Type here" id="address" TYPE="text" style="width:200px; height:20px;" SIZE="29" onmouseover="this.style.borderColor='black';this.style.backgroundColor='plum'" style="width: 106; height: 21" onmouseout="this.style.borderColor='black';this.style.backgroundColor='#ffffff'" style="border-width:1px;border-color=black">
+			</input>
 		</div>
 		<br/>
 		
-  		
-  		<div>
-    		<label for="txt"><b>Address</b></label>
-    		<input placeholder="Type here" id="address" TYPE="text" style="width:200px; height:20px;" SIZE="29" onmouseover="this.style.borderColor='black';this.style.backgroundColor='plum'"
-		style="width: 106; height: 21"
-		onmouseout="this.style.borderColor='black';this.style.backgroundColor='#ffffff'" style="border-width:1px;border-color=black">
-  		</input>
-  		</div>
-		<br/>
-		
-		<input id="Mybutton" style="margin-left:50px;margin-top:50px" type=button color="red" value="Back to options page" onclick="window.open('deliveryoptions.html')">
-		
-		<input id="Mybutton" style="margin-left:50px;margin-top:50px" type=button color="red" value="Pay" onclick="window.open('####')">
-		
+		<button id="Mybutton" style="margin-left:50px;margin-top:50px">Done</button>
+		</div>
+
+<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+				document.getElementById('Mybutton').addEventListener('tap', function() {
+			mui.openWindow({
+				url: 'done.html',
+				id: 'done'
+			});
+		});
+		</script>
+	
 	</body>
+	
+	
+
+	
+
+	
+		
+
 
 </html>
