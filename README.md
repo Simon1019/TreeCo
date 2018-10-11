@@ -12,7 +12,7 @@ Team member
 
 Introduction
 =====
-> Our team project purpose is to build a modern, useful application that could help Treeco to manage their business easier than before. Our team project is trying to provide a cross-platform application. The application could help the user to buy the tree more easier.
+> Our team project purpose is to build a modern, useful application that could help Treeco to manage their business easier than before. Our team project is trying to provide a cross-platform application. The application could help the user to buy the tree more easier that increases TreeCo’s sales. 
 >
 
 Installation
@@ -63,7 +63,7 @@ V.0.03 (14/10/2018)
 
 
 
-Project Feature(fulfilled)
+Project Features(fulfilled)
 ==========
 * Allow user to see the news, tips on the homepage
 * Allow user to search the tree by using the tree's name
@@ -76,7 +76,7 @@ Project Feature(fulfilled)
 
 
 
-Project Feature (futrue)
+Project Features (futrue)
 =============
 * Add soon....
 
