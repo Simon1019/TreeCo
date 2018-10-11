@@ -81,10 +81,5 @@ Project Feature (futrue)
 * Add soon....
 
 
-Acknowledgements
-=====
-Sheetal datt
-  * Paper Leader and Lecturer AUT City
-
 End
 ====
